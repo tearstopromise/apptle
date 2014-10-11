@@ -1,0 +1,461 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link type="text/css" rel="stylesheet" href="css/jquery.mobile-1.3.2.css">
+  <link rel="stylesheet" href="css/jquery.mobile-1.3.1.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.3.1.min.js"></script>
+
+
+</head>
+<body>
+	<div data-role="page" id="gamepage" class="havebg">
+		<div data-role="header" data-position="fixed">
+		<h1>Techno Quiz</h1>
+		
+		</div>
+		<div data-role="content">
+			<br /><br />
+		<div id="gamemenu" style="display:none;">
+				<div id="developermode" style="display:none">
+					<div id="asdf">Music Player here</div>
+					<div id="ghjk">Music Player here2</div>
+					<input type="text" name="" id="testArray" />
+					<input type="text" name="" id="correct"  disabled />
+				</div>
+			
+			<label for="">Score:</label>
+			<input type="text" name="" id="score" placeholder="Score ng player" disabled/><br />
+			<label for=""> Timer: </label>
+			<input type="text" name="" id="time" placeholder="timer" disabled/>
+			<label for="">Question:</label>
+			<div id="question"></div><br />
+			
+			
+			
+
+			<label for="">Choices</label>
+			<input type="button" value="" id="choice1" class="btn-choice" />
+			<input type="button" value="" id="choice2" class="btn-choice" />
+			<input type="button" value="" id="choice3" class="btn-choice" />
+			<input type="button" value="" id="choice4" class="btn-choice" />
+			
+			<div data-role="popup" id="popupBasic" data-theme="a" class="ui-content" data-position-to="#score" data-transition="flow">
+			<div id="txtcomplement">Complement here</div>
+			</div>
+			</div>
+			
+			
+			<div data-role="popup" id="popupReady" data-theme="b" class="ui-content"  data-overlay-theme="a" data-transition="flip">
+			<div id="txtReady">Ready text</div>
+			</div>
+	
+			
+			
+			
+		</div>
+
+
+
+	</div>
+
+	
+	
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+									
+				var myRsgTimer = "";
+				var myTimer= "";  	
+				var rsg =3; //declare some variables for the ready set go
+	startRsg();
+
+		var x = 0;//index for the splice function
+		var crossfade ="0";
+		
+	
+	
+		
+		$(".btn-choice").click(function(){
+			
+				//check answer 
+				var answer = $(this).val();
+				var correctAnswer = $("#correct").val();
+	
+				if(answer == correctAnswer){
+					addScore();
+					getQuestion();
+				}else{
+					gameOver();
+					gameStart();
+				}
+		
+		
+		
+			
+		});
+		
+		
+	
+		
+		function getQuestionsIndexes(){
+			setTimeout(function(){
+				var questionsIndexes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+				var	randomizeIndexes = [];
+				var	i = questionsIndexes.length;
+				var	j = 0;
+
+				while (i--) {
+					j = Math.floor(Math.random() * (i+1));
+					randomizeIndexes.push(questionsIndexes[j]);
+					questionsIndexes.splice(j,1);
+				}
+				
+				questionsArray = randomizeIndexes; // randomize indexes
+				$("#testArray").val(questionsArray);
+				getQuestion();
+			},50);
+		};
+		
+		function getQuestion() {
+			var qwert= $("#testArray").val();
+			//alert(qwert);
+			if (qwert == "") {
+				//alert("congrats you finished the quiz");
+			var gameOver = $("#score").val();
+			window.localStorage.setItem("lastscore", gameOver);
+			location.href="score.html";
+				
+			
+			}
+			else {
+							//array of questions and answers start
+						var data =[{
+		"id":"0",
+		"question":"wireless connection used to send and received messages",
+		"choice1":"Wifi",
+		"choice2":"Wireless",
+		"choice3":"Blueteeth",
+		"choice4":"Bluetooth",
+		"correct":"Bluetooth"
+	},
+	{
+		"id":"1",
+		"question":"electronic messages received via internet",
+		"choice1":"Email",
+		"choice2":"Ping",
+		"choice3":"Sms",
+		"choice4":"Fax",
+		"correct":"Email"
+	},
+	{
+		"id":"2",
+		
+		"question":"abbreviation for internetwork. A set of corrupt networks made up of a large number of smaller networks.",
+		"choice1":"WWW",
+		"choice2":"WWAN",
+		"choice3":"Multinetwork",
+		"choice4":"Internet",
+		"correct":"Internet"
+	},
+	{
+		"id":"3",
+
+		"question":"an application program or an operating system that the computer executes",
+		"choice1":"Exe",
+		"choice2":"Application",
+		"choice3":"App",
+		"choice4":"Software",
+		"correct":"Software"
+	},
+	{
+		"id":"4",
+		
+		"question":"network that connects users across large distances, others cross the geographical boundaries of cities or state",
+		"choice1":"Internet",
+		"choice2":"Wide Area Network",
+		"choice3":"Wlan",
+		"choice4":"Lan",
+		"correct":"Wide Area Network"
+	},
+	{
+		"id":"5",
+		
+		"question":"devices used to store data from the computer",
+		"choice1":"HDD",
+		"choice2":"Storage Media",
+		"choice3":"USB",
+		"choice4":"Hard Drive",
+		"correct":"Storage Media"
+	},
+	{
+		"id":"6",
+		
+		"question":"refers to the legislation, policies, procedures and activities that aim to protect the health, safety and welfare of all people at the workplace.",
+		"choice1":"Occupational Health and Safety",
+		"choice2":"Safety Standards",
+		"choice3":"Universal Safety Bureau",
+		"choice4":"Safety Procedures",
+		"correct":"Occupational Health and Safety"
+	},
+	{
+		"id":"7",
+		
+		"question":"any method of sharing information between two systems (human or mechanical)",
+		"choice1":"Bus",
+		"choice2":"Connection",
+		"choice3":"Internet",
+		"choice4":"Network",
+		"correct":"Network"
+	},
+	{
+		"id":"8",
+		
+		"question":"logical relations of network devices to one another",
+		"choice1":"Data Communication",
+		"choice2":"Interconnectivity",
+		"choice3":"Data Transter",
+		"choice4":"Topology",
+		"correct":"Topology"
+	},
+	{
+		"id":"9",
+		
+		"question":"A network covering a small geographic area",
+		"choice1":"Personal Area Network",
+		"choice2":"Small Area Network",
+		"choice3":"Little Area Network",
+		"choice4":"Local Area Network",
+		"correct":"Local Area Network"
+	},
+	{
+		"id":"10",
+		
+		"question":"A standard PC that is running an operating system such as DOS or Windows.",
+		"choice1":"Computer",
+		"choice2":"Client",
+		"choice3":"PC",
+		"choice4":"Node",
+		"correct":"Client"
+	},
+	{
+		"id":"11",
+		
+		"question":"A computer that is designed to share its resources",
+		"choice1":"Share Point",
+		"choice2":"Power PC",
+		"choice3":"Resource Server",
+		"choice4":"Server",
+		"correct":"Server"
+	},
+	{
+		"id":"12",
+		
+		"question":"Any interconnection among or between public, private, commercial, industrial, or governmental networks",
+		"choice1":"Internetwork",
+		"choice2":"Intranet",
+		"choice3":"Extranet",
+		"choice4":"Internet",
+		"correct":"Internetwork"
+	},
+	{
+		"id":"13",
+		
+		"question":" is a set of interconnected networks, using the Internet Protocol and uses IP-based tools such as web browsers and ftp tools, that is under the control of a single administrative entity.",
+		"choice1":"Internetwork",
+		"choice2":"Intranet",
+		"choice3":"Extranet",
+		"choice4":"Internet",
+		"correct":"Intranet"
+	},
+	{
+		"id":"14",
+		
+		"question":"is a network or internetwork that is limited in scope to a single organization or entity ",
+		"choice1":"Internetwork",
+		"choice2":"Intranet",
+		"choice3":"Extranet",
+		"choice4":"Internet",
+		"correct":"Extranet"
+	},
+	{
+		"id":"15",
+		
+		"question":"A specific internetwork, based upon the Advanced Research Projects Agency Network (ARPANET)",
+		"choice1":"Internetwork",
+		"choice2":"Intranet",
+		"choice3":"Extranet",
+		"choice4":"Internet",
+		"correct":"Internet"
+	},
+	];
+	
+	
+						var get = questionsArray[0];
+
+						var question = data[get].question;
+						var choice1 = data[get].choice1;
+						var choice2 = data[get].choice2;
+						var choice3 = data[get].choice3;
+						var choice4 = data[get].choice4;
+						var correct = data[get].correct;
+						var mysong1 = data[get].song;
+						//alert(mysong1);
+						$("#question").html('<center><h3>' + question + '</h3></center>');
+						
+						$("#choice1").val(choice1);
+						$("#choice2").val(choice2);
+						$("#choice3").val(choice3);
+						$("#choice4").val(choice4);
+						
+						$('#choice1').prev('span').find('span.ui-btn-text').text(choice1);
+						$("#choice2").prev('span').find('span.ui-btn-text').text(choice2);
+						$("#choice3").prev('span').find('span.ui-btn-text').text(choice3);
+						$("#choice4").prev('span').find('span.ui-btn-text').text(choice4);
+						
+						//crossfade assignment 
+						if(crossfade=="1"){
+						$("#asdf").html("<video id='myvid' controls autoplay><source src= '" + mysong1 + "' type='audio/mpeg' />Your browser does not support the audio element.</video>");
+						crossfade="0";
+						}
+						else{
+						$("#ghjk").html("<video id='myvid2' controls autoplay><source src= '" + mysong1 + "' type='audio/mpeg' />Your browser does not support the audio element.</video>");
+						crossfade="1";
+						
+						}
+						
+						$("#correct").val(correct);
+					/*	$("#myvid").animate({ volume: 0 }, 11000); */
+						var removed = questionsArray.splice(x, 1); // splice remove the current song
+						$("#testArray").val(questionsArray);
+						
+						
+			
+
+			}
+
+		};
+		
+		function gameStart(){
+			reset();
+			getQuestionsIndexes();
+			
+		};
+		function addScore(){
+			m = 15;
+			var bonuspoints = parseInt($("#time").val()) + 5 ;  // points for every correct answer 5 for default and a point for each second left on the timer
+			
+			var a = parseInt($("#score").val()) + bonuspoints;
+			
+			$("#score").val(a);
+			
+		$( "#popupBasic" ).popup( "close" );
+		$( "#popupBasic" ).popup( "close" );	//popup closed multiple times for bug fixes not being able to continue after pressing below two seconds
+		$( "#popupBasic" ).popup( "close" );
+		$( "#popupBasic" ).popup( "close" );
+		var c  = ['Magaling!','Tama!'];
+		var randNum = Math.floor(Math.random()*2);
+		$("#popupBasic").html(c[randNum] + " +" + bonuspoints);		//alert a complement for the player and his bonus score
+	
+		$("#popupBasic").popup("open");
+		}
+		function reset(){
+			var score = 0; //player's SCORE
+		
+			$("#score").val(score);			//set the score
+			
+			
+		};
+		
+		function gameOver(){
+			
+			var gameOver = $("#score").val();		// store in localstorage the score to be transferred on the next form
+			window.localStorage.setItem("lastscore", gameOver);
+			location.href="score.html";
+			
+		};
+				var d=new Date();		//the ready set go timer
+					mytime=d.getSeconds();
+					mytime=d.getMinutes();
+					myTime=setInterval(function(){myTimer1()},1000);  
+		                  var m=15;
+					function myTimer1()
+					{
+					var time=document.getElementById("time").value=m;
+					m--;
+					$("time").val(m);
+					
+					
+					if(m==0)
+					{
+				//	alert("Game Over!!! Try Again"+'\n'+"You have to quit the game...");
+					clearTimeout(myTime);
+					clearInterval(myTime);
+					var gameOver = $("#score").val();
+					window.localStorage.setItem("lastscore", gameOver);
+					location.href="score.html";
+					}
+					else if(m==13){
+						
+					
+					$( "#popupBasic" ).popup( "close" );
+					$( "#popupBasic" ).popup( "close" );
+					$( "#popupBasic" ).popup( "close" );
+					$( "#popupBasic" ).popup( "close" );
+					}
+					}
+
+
+
+		function startRsg(){
+
+			clearTimeout(myRsgTimer);
+			clearInterval(myRsgTimer);
+			setTimeout(function(){
+			myRsgTimer = setInterval(function(){myRsgTimer1()},1000);
+			});					// main timer for the ready set go
+		}
+	
+		function myRsgTimer1(){
+		
+			setTimeout(function(){
+			
+			});
+	
+			if(rsg == 3){
+				$("#txtReady").html("Ready!");
+				$( "#popupReady" ).popup( "open" );
+		
+			}
+			if(rsg == 2){
+				$("#txtReady").html("Set!");
+		
+			}
+			if(rsg == 1){
+				$("#txtReady").html("GO!!!");
+	
+			}
+		
+			if(rsg==0){
+
+			clearTimeout(myRsgTimer);
+			clearTimeout(myRsgTimer);
+
+			$( "#popupReady" ).popup( "close" );
+			m=15;
+			gameStart(); //start the game
+			$('#gamemenu').fadeIn("slow");
+			}
+				rsg--;
+		}				
+			/* -------------------------------------- functions END --------------------------------------------------------------------*/
+		
+	});
+
+</script>
+</html>
