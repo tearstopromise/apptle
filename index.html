@@ -9,34 +9,48 @@
 		<script src="js/jquery-1.9.1.min.js"></script>
         <script src="js/jquery.mobile-1.3.1.min.js"></script>
 
-
+	<style>
+		body{
+			text-align: justify;
+			text-justify: inter-word;
+		}
+			.havebg {
+			background-image: url(images/bg.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			color:white;
+		}
+	</style>
 
 </head>
 <body>
 
 
 <!-- main page -->
-<div data-role="page" data-theme="b" id="mainPage">
+<div data-role="page" data-theme="b" id="mainPage"  class="havebg">
 
 	<div data-role="header" data-position="fixed" data-tap-toggle="false">
-		<h1>Home</h1>
+
 	</div>
-	<div data-role="content">
+	<div data-role="content"><br><br>
 	<img src="images/banner.png" style="width:100%;margin-left:auto;margin-right:auto;display:block" />
         <br />
-<a data-role="button" data-transition="pop" data-theme="b" href="#terms"
+<a data-role="button" data-transition="pop" data-theme="d" href="#terms"
         data-icon="arrow-r" data-iconpos="right">Terms</a>
-<a data-role="button" data-transition="pop" data-theme="b" href="#personalsafety"
-        data-icon="arrow-r" data-iconpos="right">Personal safety while working with PC’s </a>
-<a data-role="button" data-transition="pop" data-theme="b" href="#network"
+<a data-role="button" data-transition="pop" data-theme="d" href="#personalsafety"
+        data-icon="arrow-r" data-iconpos="right">Personal safety </a>
+<a data-role="button" data-transition="pop" data-theme="d" href="#network"
         data-icon="arrow-r" data-iconpos="right">Computer Network</a>
-<a data-role="button" data-transition="pop" data-theme="b" href="#network2"
+<a data-role="button" data-transition="pop" data-theme="d" href="#network2"
         data-icon="arrow-r" data-iconpos="right">Client/Server Networks</a>
-		
+		<a data-role="button" data-transition="pop" data-theme="d" href="#prob"
+		   data-icon="arrow-r" data-iconpos="right">Common Pc Problems</a>		
+		<a data-role="button" data-transition="pop" data-theme="d" href="#trob"
+		   data-icon="arrow-r" data-iconpos="right">Basic Troubleshooting</a>	
         <br />
-<a data-role="button" id = "btn-quiz" data-transition="pop" data-theme="b" 
+<a data-role="button" id = "btn-quiz" data-transition="pop" data-theme="d" 
         data-icon="arrow-r" data-iconpos="right">Techno Quiz</a>
-<a data-role="button" data-transition="pop" data-theme="b" href="#abt"
+<a data-role="button" data-transition="pop" data-theme="d" href="#abt"
         data-icon="arrow-r" data-iconpos="right" data-rel="dialog">About</a>
 	</div>
 
@@ -46,7 +60,7 @@
 
 
 
-            <div data-role="page" data-theme="b" id="abt">
+            <div data-role="page" data-theme="d" id="abt">
 	<div data-role="header">
 		<h1>About</h1>
 	</div>
@@ -56,6 +70,9 @@
 <h4>Ernest Aljon M. Jose</h4>
 
 	<h4>Gordon College CCS</h4>
+	
+	source: 
+<a href="	http://www.slideshare.net/r_borres/9-tle-selected?qid=f0bce5a5-e51a-4103-ab27-ba8f2a222162&v=qf1&b=&from_search=1">DEPED GRADE 9 Learning Module TLE  </a>
        </center>
 	
 
@@ -72,7 +89,7 @@
 
 
 
-    <div data-role="page" data-theme="b" id="terms">
+    <div data-role="page" data-theme="d" id="terms">
 	<div data-role="header">
 		<h1>Terms</h1>
 	</div>
@@ -133,7 +150,7 @@
 
 
 
-<div data-role="page" data-theme="b" id="personalsafety">
+<div data-role="page" data-theme="d" id="personalsafety">
 	<div data-role="header" data-tap-toggle="false">
 		<h1>Personal safety while working with PC’s</h1>
 	</div>
@@ -170,7 +187,7 @@
         </div>
     </div>
 	
-	<div data-role="page" data-theme="b" id="network">
+	<div data-role="page" data-theme="d" id="network">
 		<div data-role="header" data-tap-toggle="false">
 			<h1>Computer Network</h1>
 		</div>
@@ -223,7 +240,7 @@
 	
 	
 	
-	<div data-role="page" data-theme="b" id="network2">
+	<div data-role="page" data-theme="d" id="network2">
 		<div data-role="header" data-tap-toggle="false">
 			<h1>Client/Server Networks </h1>
 		</div>
@@ -252,6 +269,150 @@
 </div>
 	</div>
 
+
+	<div data-role="page" data-theme="d" id="prob">
+		<div data-role="header" data-tap-toggle="false">
+			<h1>Common Problems </h1>
+		</div>
+		<div data-role="content">
+			<p>Today's computers have faster microprocessors, more memory and bigger hard drives. When you think about the differences between a Pentium 4 and 386, you have to conclude the improvement is astounding! But when error attacks your computer you have to do something for the computers to survive. Here are some of the common faults and problems that you may encounter:
+			</p>
+			<h3>Why computer becomes slow?  </h3>
+			<h4>You need more memory</h4><p>
+	Don't overlook the obvious. Up until recently not having enough memory wasn't a problem. With the price of RAM becoming very affordable, most people were filling their computers with more than enough memory to do the job. If your computer is slow and it has lower capacity of RAM, you need to add more memory to speed it up.
+</p>
+			<h4>Spyware and viruses</h4>
+			<p>Spyware. It is a software program that is intentionally installed on the computer by the user to monitor or spy on what the other users of the same computer is doing.
+For this program to be effective, you have to keep up to date. By up to date, it means up to the minute.<br> <br>
+      Virus. A software program, macro or script that has been designed to infect, destroy, modify or cause other problems with computer or software program.</p>
+
+			<h4>
+				Background programs
+			</h4>
+			<p>
+				
+				When you install new software on your computer, often times you install it to run in the background every time you start up. Most times you do this without knowing it. Look at the bottom right hand side of your screen.
+				If you see several icons there, you have extra programs running and stealing resources. Right click on these and see if you have the option of closing them. Many times, you can open the program and choose an option to keep these programs from starting automatically. 
+
+			</p>
+			<h4>Corrupted registry</h4>
+			<p>
+Any changes you make to your computer effects and actually, it corrupts your registry even when you do something positive like remove spyware and you end up with a corrupted registry.
+After months of corrupting your registry, it will become good. This will, in its early stages, cause your computer to slow down. In its advanced stages, it will freeze and crash and do more mysterious and troublesome things.</p>
+			
+		</div>
+	</div>
+
+
+	<div data-role="page" data-theme="d" id="trob">
+		<div data-role="header" data-tap-toggle="false">
+			<h1>Basic Toubleshooting</h1>
+		</div>
+		<div data-role="content">
+			
+			<h3>After I pressing the Power button... </h3>
+			<h4>Nothing happened</h4><p>•	Check mains plug switched on at wall <br> •	PSU may have its own power switch - check this is on<br>
+•	Check PSU-to-Motherboard cable(s) are correctly connected  <br>•	Check front panel power switch is correctly connected  <br>• Check Reset button is not stuck 'in' <br> • Check mains cable fuse 
+			</p>
+			<h4>There was a loud bang (possibly with smoke) at the back of the PC Case </h4>
+			<p>
+				PSU was faulty or set to incorrect voltage for mains supply system. Replace PSU 
+			</p>
+
+			<h4>
+				PC is on but monitor shows no display and a sequence of beeps emits from the PC 
+			</h4>
+			<p>
+
+				• Check fitting of CPU, RAM, Video card, sound card etc. If necessary, remove and refit these components <br> 
+				• Check the motherboard manual and perform a BIOS reset procedure  <br>
+				• This may indicate a faulty motherboard    <br>
+
+			</p>
+			<h4>PC is on but monitor shows no display and one beep emits from the PC </h4>
+			<p>
+				• Check monitor is switched on at the wall socket  <br>
+				• Check monitor power cable is connected correctly  <br>
+				• Check that the monitor's signal cable is connected correctly to both the PC and Monitor  <br>
+				• Check that the monitor is switched on at its front panel  <br>
+				• This may indicate a faulty video card<br>
+			</p>
+
+
+			<h4>PC is on but there are no power and/or HDD lights on the PC case front panel</h4>
+			<p>
+				• Check correct connection of front panel connectors to the motherboard (see motherboard manual) <br> 
+				• This 'may' indicate a faulty Motherboard <br>
+			</p>
+
+			<h4>PPC is on but HDD does not spin up </h4>
+			<p>
+				• Check power connector to HDD is properly connected  <br> 
+				• Check IDE ribbon cable is correctly connected to both Motherboard and HDD  <br> 
+				• This may indicate a faulty Hard Drive<br> 
+
+			</p>
+
+			<h4>PC is on but CD-ROM shows no lights/will not eject tray </h4>
+			<p>
+				• Check power connector to CD-ROM is properly connected<br> 
+				• Check IDE ribbon cable is correctly connected to both Motherboard and CD-ROM  <br> 
+				• This may indicate a faulty CD-ROM Drive<br> 
+			</p>
+
+			<h4>PC is on but the CPU fan/fans do not spin </h4>
+			<p>
+				• Disconnect the power immediately to prevent damage to the CPU from overheating  <br> 
+				• Check fan power cables are correctly connected to the relevant power connector (in most cases, a motherboard FAN connector or one of the PSU power connectors)  <br> 
+				• Disconnect the power and carefully spin the fan blades with a finger. If there is any resistance to this movement, this may indicate a faulty fan unit <br> 
+			</p>
+
+
+			<h4>On boot up, the monitor shows corrupted display  </h4>
+			<p>
+				• Check seating of CPU, RAM, Video card, sound card etc. If necessary, remove and refit these components  <br>
+				• Check the motherboard manual and perform a BIOS reset procedure  <br>
+				• This may indicate a faulty Motherboard or Video card   <br>
+			</p>
+
+			<h4>On boot up, display shows incorrect CPU type/speed </h4>
+			<p>
+				• Check the motherboard manual for the appropriate CPU jumper settings (where applicable)  <br>
+				• Check BIOS settings for CPU type (see Motherboard Manual)  <br>
+				• Perform a BIOS reset procedure  <br>
+				• Perform a BIOS update (with an updated BIOS, the Motherboard may support your CPU)  <br>
+				• This may indicate a faulty/old motherboard <br>
+			</p>
+
+			<h4>On boot up, display shows incorrect RAM total </h4>
+			<p>
+				• Check correct seating of Memory Modules in slots  <br>
+				• In cases of two or more modules, this may indicate a faulty module  <br>
+				• This may indicate a faulty/old motherboard <br>
+			</p>
+
+			<h4>On boot up, display shows - FDD/Keyboard/Mouse not found (or similar) </h4>
+			<p>
+				• Check correct connection of device described, In the case of the FDD, check its ribbon and power connections  <br>
+				• Check that the BIOS is configured correctly for the device described  <br>
+				• This may indicate a fault with the described device or Motherboard<br>
+			
+
+			</p>
+			<h4>The monitor shows no picture </h4>
+			<p>
+				• Is the power light on?  <br>
+				• Are the cables plugged in?  <br>
+				• Check brightness and contrast settings.  <br>
+				• Swap the monitor with another one, reboot the machine and see if it works. If the computer works the monitor has probably gone bad.  If it still fails to work, something in the CPU perhaps a video card has gone bad.<br>
+			</p>
+
+			<h4>Computer displays limited colors</h4>
+			<p>
+				• Check display options for the monitor usually under control panel under the display icon.  Select at least 256 colors for standard display. If you had 16 color selected, this may be why your screen displays limited colors.  Some programs such as FastCat require you to set display settings to 256 colors.  <br>
+			</p>
+		</div>
+	</div>
 </body>
 <script>
 		$("#btn-quiz").click(function(){

@@ -10,11 +10,21 @@
 		<script src="js/jquery-1.9.1.min.js"></script>
         <script src="js/jquery.mobile-1.3.1.min.js"></script>
 
-
+<style>
+		body{
+		color:red;
+		}
+		.havebg {
+			background-image: url(images/bg.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			color:white;
+		}
+	</style>
 </head>
 <body>
 	<div data-role="page" id="gamepage" class="havebg">
-		<div data-role="header" data-position="fixed">
+		<div data-role="header" data-theme="d" data-position="fixed">
 		<h1>Techno Quiz</h1>
 		
 		</div>
@@ -105,7 +115,7 @@
 		
 		function getQuestionsIndexes(){
 			setTimeout(function(){
-				var questionsIndexes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+				var questionsIndexes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
 				var	randomizeIndexes = [];
 				var	i = questionsIndexes.length;
 				var	j = 0;
@@ -293,6 +303,43 @@
 		"choice4":"Internet",
 		"correct":"Internet"
 	},
+		{
+		"id":"16",
+		
+		"question":"It is a software program that is intentionally installed on the computer by the user to monitor or spy on what the other users of the same computer is doing.",
+		"choice1":"Virus",
+		"choice2":"Scam",
+		"choice3":"trojan",
+		"choice4":"Spyware",
+		"correct":"Spyware"
+	},{
+		"id":"17",
+		
+		"question":"A software program, macro or script that has been designed to infect, destroy, modify or cause other problems with computer or software program.",
+		"choice1":"Virus",
+		"choice2":"Trojan",
+		"choice3":"Spam",
+		"choice4":"Scam",
+		"correct":"Virus"
+	},{
+		"id":"18",
+		
+		"question":"Software that starts whenever the computer starts up",
+		"choice1":"Background programs",
+		"choice2":"Foreground Programs",
+		"choice3":"Bios",
+		"choice4":"Loader",
+		"correct":"Background programs"
+	},{
+		"id":"19",
+		
+		"question":"Software problem which it will freeze and crash and do more mysterious and troublesome things.",
+		"choice1":"Corrupt HDD",
+		"choice2":"Corrupted registry",
+		"choice3":"Bugs",
+		"choice4":"Error 404",
+		"correct":"Corrupted registry"
+	}
 	];
 	
 	
