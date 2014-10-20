@@ -54,7 +54,7 @@
 			<input type="button" value="" id="choice3" class="btn-choice" />
 			<input type="button" value="" id="choice4" class="btn-choice" />
 			
-			<div data-role="popup" id="popupBasic" data-theme="a" class="ui-content" data-position-to="#score" data-transition="flow">
+			<div data-role="popup" id="popupBasic" data-theme="b" class="ui-content" data-position-to="#score" data-transition="flow">
 			<div id="txtcomplement">Complement here</div>
 			</div>
 			</div>
@@ -101,8 +101,11 @@
 					addScore();
 					getQuestion();
 				}else{
-					gameOver();
-					gameStart();
+			$("#popupBasic").html('<b>' + correctAnswer + '</b>');		//alert a complement for the player and his bonus score
+	
+		$("#popupBasic").popup("open");
+			m = 15;
+		getQuestion();
 				}
 		
 		
@@ -136,7 +139,7 @@
 			var qwert= $("#testArray").val();
 			//alert(qwert);
 			if (qwert == "") {
-				//alert("congrats you finished the quiz");
+				alert("congrats you finished the quiz");
 			var gameOver = $("#score").val();
 			window.localStorage.setItem("lastscore", gameOver);
 			location.href="score.html";
@@ -365,14 +368,7 @@
 						$("#choice3").prev('span').find('span.ui-btn-text').text(choice3);
 						$("#choice4").prev('span').find('span.ui-btn-text').text(choice4);
 						
-						//crossfade assignment 
-						if(crossfade=="1"){
-						$("#asdf").html("<video id='myvid' controls autoplay><source src= '" + mysong1 + "' type='audio/mpeg' />Your browser does not support the audio element.</video>");
-						crossfade="0";
-						}
-						else{
-						$("#ghjk").html("<video id='myvid2' controls autoplay><source src= '" + mysong1 + "' type='audio/mpeg' />Your browser does not support the audio element.</video>");
-						crossfade="1";
+						
 						
 						}
 						
@@ -384,7 +380,7 @@
 						
 			
 
-			}
+			
 
 		};
 		
